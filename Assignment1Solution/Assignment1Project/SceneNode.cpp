@@ -9,6 +9,7 @@ SceneNode::SceneNode(Game* game)
 	mWorldPosition = XMFLOAT3(0, 0, 0);
 	mWorldScaling = XMFLOAT3(1, 1, 1);
 	mWorldRotation = XMFLOAT3(0, 0, 0);
+	//mScrollSpeed = XMFLOAT(0, 0, 0);
 }
 
 void SceneNode::attachChild(Ptr child)
@@ -114,6 +115,16 @@ void SceneNode::setScale(float x, float y, float z)
 {
 	mWorldScaling = XMFLOAT3(x, y, z);
 }
+
+//XMFLOAT3 SceneNode::getWorldVelocity() const
+//{
+//	return mScrollSpeed;
+//}
+//
+//void SceneNode::setVelocity(float x, float y, float z)
+//{
+//	mScrollSpeed = XMFLOAT3(x, y, z);
+//}
 
 XMFLOAT4X4 SceneNode::getWorldTransform() const
 {

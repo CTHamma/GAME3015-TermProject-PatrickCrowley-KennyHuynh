@@ -1,21 +1,13 @@
-﻿  Camera.cpp
-  d3dApp.cpp
-  d3dUtil.cpp
-  DDSTextureLoader.cpp
-  GameTimer.cpp
-  GeometryGenerator.cpp
-  MathHelper.cpp
-  Aircraft.cpp
-C:\DirectX\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\Aircraft.cpp(30,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+﻿  Aircraft.cpp
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\Aircraft.cpp(30,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
   Entity.cpp
-  FrameResource.cpp
   Game.cpp
-C:\DirectX\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\Game.cpp(24,24): warning C4305: 'argument': truncation from 'double' to 'float'
-  main.cpp
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\Game.cpp(24,24): warning C4305: 'argument': truncation from 'double' to 'float'
   SceneNode.cpp
   SpriteNode.cpp
-C:\DirectX\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\SpriteNode.cpp(20,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\SpriteNode.cpp(20,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
   World.cpp
-C:\DirectX\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\World.cpp(28,42): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\World.cpp(28,42): warning C4305: 'argument': truncation from 'double' to 'float'
+  main.cpp
   Generating Code...
-  Assignment1Project.vcxproj -> C:\DirectX\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\x64\Debug\Assignment1Project.exe
+  Assignment1Project.vcxproj -> C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\x64\Debug\Assignment1Project.exe

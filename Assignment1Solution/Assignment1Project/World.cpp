@@ -48,7 +48,7 @@ void World::buildScene()
 	mBackground = backgroundSprite.get();
 	//mBackground->setPosition(mWorldBounds.left, mWorldBounds.top);
 	mBackground->setPosition(0, 0, 0.0);
-	mBackground->setScale(10.0, 1.0, 200.0);
+	mBackground->setScale(1000.0, 1.0, 1000.0); // Made world larger by increasing scale
 	//mBackground->setVelocity(0, 0, -mScrollSpeed);
 	mSceneGraph->attachChild(std::move(backgroundSprite));
 

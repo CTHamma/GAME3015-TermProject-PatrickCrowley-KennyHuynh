@@ -71,6 +71,8 @@ public:
 	void					setWorldRotation(float x, float y, float z);
 	XMFLOAT3				getWorldScale() const;
 	void					setScale(float x, float y, float z);
+	//XMFLOAT3				getWorldVelocity() const;
+	//void					setVelocity(float x, float y, float z);
 
 	XMFLOAT4X4				getWorldTransform() const;
 	XMFLOAT4X4				getTransform() const;
@@ -92,6 +94,7 @@ private:
 	XMFLOAT3				mWorldPosition;
 	XMFLOAT3				mWorldRotation;
 	XMFLOAT3				mWorldScaling;
+	//XMFLOAT3				mScrollSpeed;
 	std::vector<Ptr>		mChildren;
 	SceneNode*				mParent;
 };
