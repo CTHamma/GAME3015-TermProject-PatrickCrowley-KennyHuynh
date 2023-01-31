@@ -1,5 +1,7 @@
 #include "World.hpp"
 
+//
+
 World::World(Game* game)
 	: mSceneGraph(new SceneNode(game))
 	, mGame(game)
