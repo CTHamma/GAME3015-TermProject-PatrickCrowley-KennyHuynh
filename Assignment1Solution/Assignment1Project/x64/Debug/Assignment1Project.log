@@ -1,13 +1,4 @@
-﻿  Aircraft.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\Aircraft.cpp(30,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
-  Entity.cpp
-  Game.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\Game.cpp(24,24): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  Entity.cpp
   SceneNode.cpp
-  SpriteNode.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\SpriteNode.cpp(20,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
-  World.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\Assignment1Project\World.cpp(28,42): warning C4305: 'argument': truncation from 'double' to 'float'
-  main.cpp
   Generating Code...
-  Assignment1Project.vcxproj -> C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\x64\Debug\Assignment1Project.exe
+  Assignment1Project.vcxproj -> D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment1Solution\x64\Debug\Assignment1Project.exe

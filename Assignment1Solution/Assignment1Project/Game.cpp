@@ -518,6 +518,8 @@ void Game::BuildShapeGeometry()
 	auto geo = std::make_unique<MeshGeometry>();
 	geo->Name = "boxGeo";
 
+	
+
 	ThrowIfFailed(D3DCreateBlob(vbByteSize, &geo->VertexBufferCPU));
 	CopyMemory(geo->VertexBufferCPU->GetBufferPointer(), vertices.data(), vbByteSize);
 
@@ -538,6 +540,54 @@ void Game::BuildShapeGeometry()
 	geo->DrawArgs["box"] = boxSubmesh;
 
 	mGeometries[geo->Name] = std::move(geo);
+
+	GeometryGenerator::MeshData plane = geoGen.CreateBox(1, 1, 1, 1);
+	SubmeshGeometry planeSubmesh;
+	planeSubmesh.IndexCount = (UINT)plane.Indices32.size();
+	planeSubmesh.StartIndexLocation = 0;
+	planeSubmesh.BaseVertexLocation = 0;
+
+
+	//std::vector<Vertex> vertices(plane.Vertices.size());
+
+	for (size_t i = 0; i < plane.Vertices.size(); ++i)
+	{
+		vertices[i].Pos = plane.Vertices[i].Position;
+		vertices[i].Normal = plane.Vertices[i].Normal;
+		vertices[i].TexC = plane.Vertices[i].TexC;
+	}
+
+	//std::vector<std::uint16_t> indices = plane.GetIndices16();
+
+	/*const UINT vbByteSize = (UINT)vertices.size() * sizeof(Vertex);
+	const UINT ibByteSize = (UINT)indices.size() * sizeof(std::uint16_t);*/
+
+	auto geo2 = std::make_unique<MeshGeometry>();
+	geo2->Name = "planeGeo";
+
+
+
+	ThrowIfFailed(D3DCreateBlob(vbByteSize, &geo2->VertexBufferCPU));
+	CopyMemory(geo2->VertexBufferCPU->GetBufferPointer(), vertices.data(), vbByteSize);
+
+	ThrowIfFailed(D3DCreateBlob(ibByteSize, &geo2->IndexBufferCPU));
+	CopyMemory(geo2->IndexBufferCPU->GetBufferPointer(), indices.data(), ibByteSize);
+
+	geo2->VertexBufferGPU = d3dUtil::CreateDefaultBuffer(md3dDevice.Get(),
+		mCommandList.Get(), vertices.data(), vbByteSize, geo2->VertexBufferUploader);
+
+	geo2->IndexBufferGPU = d3dUtil::CreateDefaultBuffer(md3dDevice.Get(),
+		mCommandList.Get(), indices.data(), ibByteSize, geo2->IndexBufferUploader);
+
+	geo2->VertexByteStride = sizeof(Vertex);
+	geo2->VertexBufferByteSize = vbByteSize;
+	geo2->IndexFormat = DXGI_FORMAT_R16_UINT;
+	geo2->IndexBufferByteSize = ibByteSize;
+
+	geo2->DrawArgs["plane"] = planeSubmesh;
+
+	mGeometries[geo2->Name] = std::move(geo2);
+
 }
 
 void Game::BuildPSOs()

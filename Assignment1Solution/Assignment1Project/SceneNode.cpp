@@ -9,7 +9,7 @@ SceneNode::SceneNode(Game* game)
 	mWorldPosition = XMFLOAT3(0, 0, 0);
 	mWorldScaling = XMFLOAT3(1, 1, 1);
 	mWorldRotation = XMFLOAT3(0, 0, 0);
-	//mScrollSpeed = XMFLOAT(0, 0, 0);
+	mScrollSpeed = XMFLOAT3(0, 0, 0);
 }
 
 void SceneNode::attachChild(Ptr child)
@@ -157,4 +157,9 @@ void SceneNode::move(float x, float y, float z)
 	mWorldPosition.x += x;
 	mWorldPosition.y += y;
 	mWorldPosition.z += z;
+
+	if (mWorldPosition.z <= -20.0f)
+	{
+		mWorldPosition.z = 40.0f;
+	}
 }

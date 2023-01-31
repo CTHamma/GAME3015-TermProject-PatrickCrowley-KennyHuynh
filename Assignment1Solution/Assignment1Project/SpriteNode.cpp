@@ -19,11 +19,11 @@ void SpriteNode::buildCurrent()
 	XMStoreFloat4x4(&renderer->TexTransform, XMMatrixScaling(50.0f, 50.0f, 50.0f)); // Changed Scale to 50.0f
 	renderer->ObjCBIndex = game->getRenderItems().size();
 	renderer->Mat = game->getMaterials()["Desert"].get();
-	renderer->Geo = game->getGeometries()["boxGeo"].get();
+	renderer->Geo = game->getGeometries()["planeGeo"].get();
 	renderer->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
-	renderer->IndexCount = renderer->Geo->DrawArgs["box"].IndexCount;
-	renderer->StartIndexLocation = renderer->Geo->DrawArgs["box"].StartIndexLocation;
-	renderer->BaseVertexLocation = renderer->Geo->DrawArgs["box"].BaseVertexLocation;
+	renderer->IndexCount = renderer->Geo->DrawArgs["plane"].IndexCount;
+	renderer->StartIndexLocation = renderer->Geo->DrawArgs["plane"].StartIndexLocation;
+	renderer->BaseVertexLocation = renderer->Geo->DrawArgs["plane"].BaseVertexLocation;
 
 	game->getRenderItems().push_back(std::move(render));
 }
