@@ -15,6 +15,7 @@ public:
 
 public:
 	Aircraft(Type type, Game* game);
+	
 
 
 private:
@@ -26,3 +27,4 @@ private:
 	Type				mType;
 	std::string			mSprite;
 };
+

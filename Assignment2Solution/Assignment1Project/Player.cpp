@@ -11,7 +11,7 @@ void Player::handleRealtimeInput(CommandQueue& commands)
 		Command moveLeft;
 		moveLeft.category = Category::PlayerAircraft;
 		moveLeft.action = derivedAction<Aircraft>(
-		AircraftMover(-playerSpeed, 0.f));
+		AircraftMover(-playerSpeed, 0.f, 0.0f));
 		commands.push(moveLeft);
 	}
 }
