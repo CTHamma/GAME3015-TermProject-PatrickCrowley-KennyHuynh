@@ -5,6 +5,7 @@
 #include "../Common/GeometryGenerator.h"
 #include "../Common/Camera.h"
 #include "FrameResource.h"
+#include "Command.hpp"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -73,6 +74,9 @@ public:
 	void					setScale(float x, float y, float z);
 	XMFLOAT3				getWorldVelocity() const;
 	void					setVelocity(float x, float y, float z);
+
+	virtual unsigned int	getCategory() const;
+	void					onCommand(const Command& command, const GameTimer& dt);
 
 	XMFLOAT4X4				getWorldTransform() const;
 	XMFLOAT4X4				getTransform() const;

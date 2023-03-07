@@ -13,9 +13,20 @@ World::World(Game* game)
 {
 }
 
+CommandQueue& World::getCommandQueue()
+{
+	return mCommandQueue;
+}
+
 void World::update(const GameTimer& gt)
 {
+	mPlayerAircraft->setVelocity(0.0f, 0.0f);
+
 	mSceneGraph->update(gt);
+
+	// Forward commands to scene graph, adapt velocity (scrolling, diagonal correction)
+	while (!mCommandQueue.isEmpty())
+		mSceneGraph->onCommand(mCommandQueue.pop(), gt);
 }
 
 void World::draw()

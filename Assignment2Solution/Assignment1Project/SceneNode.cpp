@@ -1,5 +1,6 @@
 #include "SceneNode.hpp"
 #include "Game.hpp"
+#include "Category.hpp"
 
 SceneNode::SceneNode(Game* game)
 	: mChildren()
@@ -125,6 +126,22 @@ void SceneNode::setScale(float x, float y, float z)
 //{
 //	mScrollSpeed = XMFLOAT3(x, y, z);
 //}
+
+unsigned int SceneNode::getCategory() const
+{
+	return Category::Scene;
+}
+
+void SceneNode::onCommand(const Command& command, const GameTimer& dt)
+{
+	// Command current node, if category matches
+	if (command.category & getCategory())
+		command.action(*this, dt);
+
+	// Command children
+	for (Ptr& child : mChildren)
+		child->onCommand(command, dt);
+}
 
 XMFLOAT4X4 SceneNode::getWorldTransform() const
 {
