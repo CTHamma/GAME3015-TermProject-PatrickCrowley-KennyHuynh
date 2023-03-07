@@ -198,7 +198,7 @@ void Game::OnKeyboardInput(const GameTimer& gt)
 
 		if (!hit)
 		{
-			mCamera.Walk(10.0f * dt);
+			//mCamera.Walk(10.0f * dt);
 
 		}
 	}
@@ -208,7 +208,7 @@ void Game::OnKeyboardInput(const GameTimer& gt)
 		bool hit = false;
 		if (!hit)
 		{
-			mCamera.Walk(-10.0f * dt);
+			//mCamera.Walk(-10.0f * dt);
 		}
 
 	}
@@ -217,7 +217,7 @@ void Game::OnKeyboardInput(const GameTimer& gt)
 		bool hit = false;
 		if (!hit)
 		{
-			mCamera.Strafe(-10.0f * dt);
+			//mCamera.Strafe(-10.0f * dt);
 		}
 
 
@@ -227,7 +227,7 @@ void Game::OnKeyboardInput(const GameTimer& gt)
 		bool hit = false;
 		if (!hit)
 		{
-			mCamera.Strafe(10.0f * dt);
+			//mCamera.Strafe(10.0f * dt);
 		}
 	}
 
@@ -769,7 +769,7 @@ std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> Game::GetStaticSamplers()
 void Game::processInput()
 {
 	CommandQueue& commands = mWorld.getCommandQueue();
-	mPlayer.handleEvent(commands);
+	//mPlayer.handleEvent(commands);
 	mPlayer.handleRealtimeInput(commands);
 }
 

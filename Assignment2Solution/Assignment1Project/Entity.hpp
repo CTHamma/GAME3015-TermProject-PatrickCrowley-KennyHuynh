@@ -16,17 +16,5 @@ public:
 	XMFLOAT3		mVelocity;
 };
 
-struct AircraftMover
-{
-	AircraftMover(float vx, float vy, float vz) :
-		velocity(vx, vy, vz)
-	{
-	}
-	void operator() (SceneNode& node, const GameTimer dt)
-	{
-		Aircraft& aircraft = static_cast<Aircraft&>(node);
-		aircraft.setVelocity(velocity.x, velocity.y, velocity.z);
-	}
-	XMFLOAT3 velocity;
-};
+
 

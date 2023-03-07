@@ -28,3 +28,17 @@ private:
 	std::string			mSprite;
 };
 
+struct AircraftMover
+{
+	AircraftMover(float vx, float vy) :
+		velocity(vx, vy)
+	{
+	}
+	void operator() (SceneNode& node, const GameTimer dt)
+	{
+		Aircraft& aircraft = static_cast<Aircraft&>(node);
+		aircraft.setVelocity(velocity.x, velocity.y);
+	}
+	XMFLOAT2 velocity;
+};
+
