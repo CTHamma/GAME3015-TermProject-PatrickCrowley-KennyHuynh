@@ -65,6 +65,7 @@ void Game::OnResize()
 void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
+	processInput();
 	mWorld.update(gt);
 	//UpdateCamera(gt);
 
@@ -192,44 +193,44 @@ void Game::OnKeyboardInput(const GameTimer& gt)
 	XMFLOAT3  oppositef3(-1, -1, -1);
 	XMVECTOR opposite = XMLoadFloat3(&oppositef3);
 
-	if (GetAsyncKeyState('W') & 0x8000)
-	{
-		bool hit = false;
+	//if (GetAsyncKeyState('W') & 0x8000)
+	//{
+	//	bool hit = false;
 
-		if (!hit)
-		{
-			//mCamera.Walk(10.0f * dt);
+	//	if (!hit)
+	//	{
+	//		//mCamera.Walk(10.0f * dt);
 
-		}
-	}
+	//	}
+	//}
 
-	if (GetAsyncKeyState('S') & 0x8000)
-	{
-		bool hit = false;
-		if (!hit)
-		{
-			//mCamera.Walk(-10.0f * dt);
-		}
+	//if (GetAsyncKeyState('S') & 0x8000)
+	//{
+	//	bool hit = false;
+	//	if (!hit)
+	//	{
+	//		//mCamera.Walk(-10.0f * dt);
+	//	}
 
-	}
-	if (GetAsyncKeyState('A') & 0x8000)
-	{
-		bool hit = false;
-		if (!hit)
-		{
-			//mCamera.Strafe(-10.0f * dt);
-		}
+	//}
+	//if (GetAsyncKeyState('A') & 0x8000)
+	//{
+	//	bool hit = false;
+	//	if (!hit)
+	//	{
+	//		//mCamera.Strafe(-10.0f * dt);
+	//	}
 
 
-	}
-	if (GetAsyncKeyState('D') & 0x8000)
-	{
-		bool hit = false;
-		if (!hit)
-		{
-			//mCamera.Strafe(10.0f * dt);
-		}
-	}
+	//}
+	//if (GetAsyncKeyState('D') & 0x8000)
+	//{
+	//	bool hit = false;
+	//	if (!hit)
+	//	{
+	//		//mCamera.Strafe(10.0f * dt);
+	//	}
+	//}
 
 
 	mCamera.UpdateViewMatrix();
@@ -769,7 +770,7 @@ std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> Game::GetStaticSamplers()
 void Game::processInput()
 {
 	CommandQueue& commands = mWorld.getCommandQueue();
-	//mPlayer.handleEvent(commands);
+	mPlayer.handleEvent(commands);
 	mPlayer.handleRealtimeInput(commands);
 }
 

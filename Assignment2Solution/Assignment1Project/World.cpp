@@ -20,7 +20,7 @@ CommandQueue& World::getCommandQueue()
 
 void World::update(const GameTimer& gt)
 {
-	mPlayerAircraft->setVelocity(0.0f, 0.0f);
+	//mPlayerAircraft->setVelocity(0.0f, 0.0f);
 
 	mSceneGraph->update(gt);
 
