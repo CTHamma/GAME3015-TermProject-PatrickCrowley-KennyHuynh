@@ -29,9 +29,10 @@ void Player::handleRealtimeInput(CommandQueue& commands)
 {
 	if (GetAsyncKeyState('W') & 0x8000)
 	{
-		/*Command moveLeft;
+		Command moveLeft;
 		moveLeft.category = Category::PlayerAircraft;
-		moveLeft.action = AircraftMover(-playerSpeed, 0.f, 0.0f);
-		commands.push(moveLeft);*/
+		moveLeft.action = derivedAction<Aircraft>(
+			AircraftMover(-playerSpeed, 0.f, 0.f));
+		commands.push(moveLeft);
 	}
 }

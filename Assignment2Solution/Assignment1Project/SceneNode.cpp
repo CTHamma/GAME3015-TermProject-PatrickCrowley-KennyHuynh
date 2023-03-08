@@ -127,7 +127,7 @@ void SceneNode::setVelocity(float x, float y, float z)
 	mScrollSpeed = XMFLOAT3(x, y, z);
 }
 
-unsigned int SceneNode::getCategory() const
+unsigned int SceneNode::getCategory()
 {
 	return Category::Scene;
 }

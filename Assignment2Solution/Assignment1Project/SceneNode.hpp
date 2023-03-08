@@ -75,7 +75,7 @@ public:
 	XMFLOAT3				getWorldVelocity() const;
 	void					setVelocity(float x, float y, float z);
 
-	virtual unsigned int	getCategory() const;
+	virtual unsigned int	getCategory();
 	void					onCommand(const Command& command, const GameTimer& dt);
 
 	XMFLOAT4X4				getWorldTransform() const;

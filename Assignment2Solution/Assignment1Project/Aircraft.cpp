@@ -1,5 +1,6 @@
 #include "Aircraft.hpp"
 #include "Game.hpp"
+#include "Category.hpp"
 
 Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 	, mType(type)
@@ -16,6 +17,11 @@ Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 		mSprite = "Eagle";
 		break;
 	}
+}
+
+unsigned int Aircraft::getCategory()
+{
+	return Category::PlayerAircraft;
 }
 
 void Aircraft::drawCurrent() const

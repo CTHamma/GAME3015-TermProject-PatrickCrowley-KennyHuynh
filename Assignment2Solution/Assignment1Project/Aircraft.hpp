@@ -15,7 +15,7 @@ public:
 
 public:
 	Aircraft(Type type, Game* game);
-	
+	unsigned int	getCategory() override;
 
 
 private:
