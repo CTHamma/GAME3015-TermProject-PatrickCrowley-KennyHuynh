@@ -7,8 +7,11 @@ class Entity :
 public:
 	Entity(Game* game);
 	void				setVelocity(float x, float y, float z);
-	void				setVelocity(float vx, float vy);
+	void				setVelocity(XMFLOAT3 newVelocity);
 	XMFLOAT3			getVelocity() const;
+
+	void				accelerate(float x, float y, float z);
+	void				accelerate(XMFLOAT3 newAcceleration);
 
 	virtual	void		updateCurrent(const GameTimer& gt);
 

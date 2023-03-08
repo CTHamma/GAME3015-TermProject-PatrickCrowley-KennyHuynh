@@ -20,13 +20,15 @@ CommandQueue& World::getCommandQueue()
 
 void World::update(const GameTimer& gt)
 {
-	//mPlayerAircraft->setVelocity(0.0f, 0.0f);
-
-	mSceneGraph->update(gt);
+	mPlayerAircraft->setVelocity(0.0f, 0.0f, 0.0f);
+	
 
 	// Forward commands to scene graph, adapt velocity (scrolling, diagonal correction)
 	while (!mCommandQueue.isEmpty())
 		mSceneGraph->onCommand(mCommandQueue.pop(), gt);
+	adaptPlayerVelocity();
+
+	mSceneGraph->update(gt);
 }
 
 void World::draw()
@@ -83,4 +85,15 @@ void World::buildScene()
 	mSceneGraph->attachChild(std::move(plane3));
 
 	mSceneGraph->build();
+}
+
+void World::adaptPlayerVelocity()
+{
+	XMFLOAT3 velocity = mPlayerAircraft->getVelocity();
+
+	// If moving diagonally, reduce velocity (to have always same velocity)
+	if (velocity.x != 0.f && velocity.y != 0.f) {
+		velocity = XMFLOAT3(velocity.x / std::sqrt(2.f), velocity.y / std::sqrt(2.f), 0.0f);
+		mPlayerAircraft->setVelocity(velocity);
+	}
 }

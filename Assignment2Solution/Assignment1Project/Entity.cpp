@@ -10,15 +10,28 @@ void Entity::setVelocity(float x, float y, float z)
 	mVelocity = velocity;
 }
 
-void Entity::setVelocity(float vx, float vy)
+void Entity::setVelocity(XMFLOAT3 newVelocity)
 {
-	mVelocity.x = vx;
-	mVelocity.y = vy;
+	mVelocity = newVelocity;
 }
 
 XMFLOAT3 Entity::getVelocity() const
 {
 	return mVelocity;
+}
+
+void Entity::accelerate(float x, float y, float z)
+{
+	mVelocity.x += x;
+	mVelocity.y += y;
+	mVelocity.z += z;
+}
+
+void Entity::accelerate(XMFLOAT3 newAcceleration)
+{
+	mVelocity.x += newAcceleration.x;
+	mVelocity.y += newAcceleration.y;
+	mVelocity.z += newAcceleration.z;
 }
 
 void Entity::updateCurrent(const GameTimer& gt) 

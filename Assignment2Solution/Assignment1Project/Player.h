@@ -21,7 +21,7 @@ public:
 		ActionCount
 	};
 	void					assignKey(Action action, char key);
-	//char		getAssignedKey(Action action) const;
+	char					getAssignedKey(Action action) const;
 
 
 private:

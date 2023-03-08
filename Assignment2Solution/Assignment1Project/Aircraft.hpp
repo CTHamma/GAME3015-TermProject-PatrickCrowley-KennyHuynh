@@ -37,7 +37,7 @@ struct AircraftMover
 	void operator() (SceneNode& node, const GameTimer& dt) const
 	{
 		Aircraft& aircraft = static_cast<Aircraft&>(node);
-		aircraft.setVelocity(velocity.x, velocity.y, velocity.z);
+		aircraft.accelerate(velocity.x, velocity.y, velocity.z);
 	}
 	XMFLOAT3 velocity;
 };

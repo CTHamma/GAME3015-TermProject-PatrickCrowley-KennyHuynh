@@ -14,6 +14,7 @@ public:
 
 	//void								loadTextures();
 	void								buildScene();
+	void								adaptPlayerVelocity();
 	CommandQueue& getCommandQueue();
 
 private:

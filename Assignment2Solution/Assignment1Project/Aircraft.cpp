@@ -21,7 +21,13 @@ Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 
 unsigned int Aircraft::getCategory()
 {
-	return Category::PlayerAircraft;
+	switch (mType)
+	{
+	case (Eagle):
+		return Category::PlayerAircraft;
+	case (Raptor):
+		return Category::AlliedAircraft;
+	}
 }
 
 void Aircraft::drawCurrent() const
