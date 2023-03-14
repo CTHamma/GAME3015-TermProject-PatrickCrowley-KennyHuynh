@@ -12,6 +12,7 @@ public:
 
 
 	virtual bool Initialize()override;
+	Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> getCommandList();
 private:
 	virtual void OnResize()override;
 	virtual void Update(const GameTimer& gt)override;
@@ -50,15 +51,14 @@ private:
 private:
 
 	std::vector<std::unique_ptr<FrameResource>> mFrameResources;
-	FrameResource* mCurrFrameResource = nullptr;
+	
 	int mCurrFrameResourceIndex = 0;
 
-	UINT mCbvSrvDescriptorSize = 0;
+	
 
 	ComPtr<ID3D12RootSignature> mRootSignature = nullptr;
 
-	//step11
-	ComPtr<ID3D12DescriptorHeap> mSrvDescriptorHeap = nullptr;
+	
 
 	std::unordered_map<std::string, std::unique_ptr<MeshGeometry>> mGeometries;
 	std::unordered_map<std::string, std::unique_ptr<Material>> mMaterials;
@@ -97,4 +97,9 @@ public:
 	std::vector<std::unique_ptr<RenderItem>>& getRenderItems() { return mAllRitems; }
 	std::unordered_map<std::string, std::unique_ptr<Material>>& getMaterials() { return mMaterials; }
 	std::unordered_map<std::string, std::unique_ptr<MeshGeometry>>& getGeometries() { return mGeometries; }
+	//step11
+	ComPtr<ID3D12DescriptorHeap> mSrvDescriptorHeap = nullptr;
+	UINT mCbvSrvDescriptorSize = 0;
+	FrameResource* mCurrFrameResource = nullptr;
+	
 };

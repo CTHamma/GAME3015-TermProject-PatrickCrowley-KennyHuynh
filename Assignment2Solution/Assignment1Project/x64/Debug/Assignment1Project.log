@@ -1,12 +1,24 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Camera.cpp
+  d3dApp.cpp
+  d3dUtil.cpp
+  DDSTextureLoader.cpp
+  GameTimer.cpp
+  GeometryGenerator.cpp
+  MathHelper.cpp
   Aircraft.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\Aircraft.cpp(42,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\Aircraft.cpp(69,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  Command.cpp
+  CommandQueue.cpp
+  Entity.cpp
+  FrameResource.cpp
   Game.cpp
+  main.cpp
   Player.cpp
   SceneNode.cpp
   SpriteNode.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\SpriteNode.cpp(20,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
-  main.cpp
+D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\SpriteNode.cpp(20,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  World.cpp
   Generating Code...
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\Aircraft.cpp(31): warning C4715: 'Aircraft::getCategory': not all control paths return a value
-  Assignment1Project.vcxproj -> C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\x64\Debug\Assignment2Project.exe
+D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\Aircraft.cpp(31): warning C4715: 'Aircraft::getCategory': not all control paths return a value
+  Assignment1Project.vcxproj -> D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\x64\Debug\Assignment2Project.exe

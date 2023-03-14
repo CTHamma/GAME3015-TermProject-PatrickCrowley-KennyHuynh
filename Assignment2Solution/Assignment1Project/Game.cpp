@@ -51,6 +51,11 @@ bool Game::Initialize()
 	return true;
 }
 
+Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> Game::getCommandList()
+{
+	return mCommandList;
+}
+
 void Game::OnResize()
 {
 	D3DApp::OnResize();

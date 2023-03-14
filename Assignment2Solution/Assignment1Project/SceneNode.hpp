@@ -94,6 +94,7 @@ private:
 protected:
 	Game*					game;
 	RenderItem*				renderer;
+	RenderItem*				aircraftRenderer;
 private:
 	XMFLOAT3				mWorldPosition;
 	XMFLOAT3				mWorldRotation;
