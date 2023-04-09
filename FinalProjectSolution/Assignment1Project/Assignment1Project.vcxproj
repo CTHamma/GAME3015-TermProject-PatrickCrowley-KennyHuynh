@@ -145,6 +145,9 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneNode.cpp" />
     <ClCompile Include="SpriteNode.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateStack.cpp" />
+    <ClCompile Include="TilteState.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -162,12 +165,22 @@
     <ClInclude Include="Command.hpp" />
     <ClInclude Include="CommandQueue.hpp" />
     <ClInclude Include="Entity.hpp" />
+    <ClInclude Include="Foreach.hpp" />
     <ClInclude Include="FrameResource.h" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ResourceHolder.hpp" />
+    <ClInclude Include="ResourceIdentifiers.hpp" />
     <ClInclude Include="SceneNode.hpp" />
     <ClInclude Include="SpriteNode.h" />
+    <ClInclude Include="State.hpp" />
+    <ClInclude Include="StateIdentifiers.hpp" />
+    <ClInclude Include="StateStack.hpp" />
+    <ClInclude Include="TitleState.hpp" />
     <ClInclude Include="World.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResourceHolder.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,7 +5,7 @@ class SpriteNode :
     public Entity
 {
 public:
-	SpriteNode(Game* game);
+	SpriteNode(Game* game, std::string state);
 
 private:
 	virtual void		drawCurrent() const;

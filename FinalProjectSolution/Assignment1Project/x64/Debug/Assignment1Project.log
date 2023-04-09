@@ -1,4 +1,4 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj, Assignment2Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Camera.cpp
   d3dApp.cpp
   d3dUtil.cpp
@@ -7,7 +7,7 @@
   GeometryGenerator.cpp
   MathHelper.cpp
   Aircraft.cpp
-D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\Aircraft.cpp(69,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\Aircraft.cpp(69,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
   Command.cpp
   CommandQueue.cpp
   Entity.cpp
@@ -17,8 +17,37 @@ D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-Patr
   Player.cpp
   SceneNode.cpp
   SpriteNode.cpp
-D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\SpriteNode.cpp(20,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
-  World.cpp
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SpriteNode.cpp(20,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  State.cpp
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,24): error C2653: 'sf': is not a class or namespace name
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,28): error C2065: 'Texture': undeclared identifier
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,9): error C2923: 'ResourceHolder': 'Texture' is not a valid template type argument for parameter 'Resource'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19): message : see declaration of 'Texture'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\StateStack.hpp(52,2): error C2011: 'StateStack::Action': 'enum' type redefinition
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\StateStack.hpp(27): message : see declaration of 'StateStack::Action'
+  StateStack.cpp
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,24): error C2653: 'sf': is not a class or namespace name
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,28): error C2065: 'Texture': undeclared identifier
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,9): error C2923: 'ResourceHolder': 'Texture' is not a valid template type argument for parameter 'Resource'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19): message : see declaration of 'Texture'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\StateStack.hpp(52,2): error C2011: 'StateStack::Action': 'enum' type redefinition
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\StateStack.hpp(27): message : see declaration of 'StateStack::Action'
+  TilteState.cpp
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,24): error C2653: 'sf': is not a class or namespace name
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,28): error C2065: 'Texture': undeclared identifier
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19,9): error C2923: 'ResourceHolder': 'Texture' is not a valid template type argument for parameter 'Resource'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\ResourceIdentifiers.hpp(19): message : see declaration of 'Texture'
   Generating Code...
-D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\Aircraft.cpp(31): warning C4715: 'Aircraft::getCategory': not all control paths return a value
-  Assignment1Project.vcxproj -> D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\x64\Debug\Assignment2Project.exe
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\Aircraft.cpp(31): warning C4715: 'Aircraft::getCategory': not all control paths return a value
+  Compiling...
+  World.cpp
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(63,68): error C2440: '<function-style-cast>': cannot convert from 'Game *' to 'SpriteNode'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(63,68): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(63,70): error C2512: 'SpriteNode::SpriteNode': no appropriate default constructor available
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(71,68): error C2440: '<function-style-cast>': cannot convert from 'Game *' to 'SpriteNode'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(71,68): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(71,70): error C2512: 'SpriteNode::SpriteNode': no appropriate default constructor available
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(79,68): error C2440: '<function-style-cast>': cannot convert from 'Game *' to 'SpriteNode'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(79,68): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(79,70): error C2512: 'SpriteNode::SpriteNode': no appropriate default constructor available
+  Generating Code...
