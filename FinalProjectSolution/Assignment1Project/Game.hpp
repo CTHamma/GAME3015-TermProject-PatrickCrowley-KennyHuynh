@@ -1,5 +1,6 @@
 #include "World.hpp"
 #include "Player.h"
+#include "StateStack.hpp"
 
 class Game : public D3DApp
 {
@@ -28,6 +29,7 @@ private:
 	void UpdateObjectCBs(const GameTimer& gt);
 	void UpdateMaterialCBs(const GameTimer& gt);
 	void UpdateMainPassCB(const GameTimer& gt);
+	void registerStates();
 
 	//step5
 	void LoadTextures();
@@ -54,7 +56,9 @@ private:
 	
 	int mCurrFrameResourceIndex = 0;
 
-	
+
+	StateStack mStateStack;
+	State::Context mContext;
 
 	ComPtr<ID3D12RootSignature> mRootSignature = nullptr;
 

@@ -1,10 +1,15 @@
 #include "Game.hpp"
+#include "State.hpp"
+#include "TitleState.hpp"
+#include "StateIdentifiers.hpp"
+
 
 const int gNumFrameResources = 3;
 
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance)
 	, mWorld(this)
+	, mStateStack(State::Context(this, mPlayer))
 {
 }
 
@@ -347,6 +352,11 @@ void Game::UpdateMainPassCB(const GameTimer& gt)
 
 	auto currPassCB = mCurrFrameResource->PassCB.get();
 	currPassCB->CopyData(0, mMainPassCB);
+}
+
+void Game::registerStates()
+{
+	mStateStack.registerState<TitleState>(States::Title);
 }
 
 void Game::LoadTextures()

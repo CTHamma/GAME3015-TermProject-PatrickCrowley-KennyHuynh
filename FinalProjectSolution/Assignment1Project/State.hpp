@@ -2,6 +2,7 @@
 #include "StateIdentifiers.hpp"
 #include "ResourceIdentifiers.hpp"
 #include "Game.hpp"
+#include "Player.h"
 
 #include <memory>
 
@@ -21,17 +22,15 @@ public:
 
 	struct Context
 	{
-		Context(Game& window, TextureHolder& textures, /*FontHolder& fonts,*/ Player& player);
+		Context(Game* window, Player player);
 
 		Game* window;
-		TextureHolder* textures;
-		//FontHolder* fonts;
-		Player* player;
+		Player player;
 	};
 
 
 public:
-	State(StateStack& stack, Context context);
+	State(StateStack* stack, Context context);
 	virtual				~State();
 
 	virtual void		draw() = 0;
