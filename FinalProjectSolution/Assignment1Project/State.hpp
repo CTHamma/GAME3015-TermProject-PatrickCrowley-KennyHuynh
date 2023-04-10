@@ -1,7 +1,6 @@
 #pragma once
 #include "StateIdentifiers.hpp"
 #include "ResourceIdentifiers.hpp"
-#include "Game.hpp"
 #include "Player.h"
 
 #include <memory>
@@ -14,6 +13,7 @@
 
 class StateStack;
 class Player;
+class Game;
 
 class State
 {
@@ -22,15 +22,16 @@ public:
 
 	struct Context
 	{
-		Context(Game* window, Player player);
+		Context();
+		Context(Game* window, Player* player);
 
 		Game* window;
-		Player player;
+		Player* player;
 	};
 
 
 public:
-	State(StateStack* stack, Context context);
+	State(StateStack& stack, Context context);
 	virtual				~State();
 
 	virtual void		draw() = 0;
@@ -47,6 +48,6 @@ protected:
 
 
 private:
-	StateStack* mStack;
+	StateStack*			mStack;
 	Context				mContext;
 };

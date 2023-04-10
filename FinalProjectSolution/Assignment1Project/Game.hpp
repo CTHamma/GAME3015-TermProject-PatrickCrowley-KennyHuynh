@@ -2,6 +2,8 @@
 #include "Player.h"
 #include "StateStack.hpp"
 
+class StateStack;
+
 class Game : public D3DApp
 {
 public:

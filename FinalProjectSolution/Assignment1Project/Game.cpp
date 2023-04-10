@@ -9,8 +9,10 @@ const int gNumFrameResources = 3;
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance)
 	, mWorld(this)
-	, mStateStack(State::Context(this, mPlayer))
-{
+	, mStateStack(State::Context(this, &mPlayer))
+{	
+	registerStates();
+	mStateStack.pushState(States::Title);
 }
 
 Game::~Game()
