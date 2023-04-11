@@ -8,7 +8,7 @@ const int gNumFrameResources = 3;
 
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance)
-	, mWorld(this)
+	//, mWorld(this)
 	, mStateStack(State::Context(this, mPlayer))
 {	
 }
@@ -41,12 +41,14 @@ bool Game::Initialize()
 	BuildShadersAndInputLayout();
 	BuildShapeGeometry();
 	BuildMaterials();
-	BuildRenderItems();
-	BuildFrameResources();
-	BuildPSOs();
 
 	registerStates();
 	mStateStack.pushState(States::Title);
+	mStateStack.handleEvent();
+
+	BuildRenderItems();
+	BuildFrameResources();
+	BuildPSOs();
 
 	// Execute the initialization commands.
 	ThrowIfFailed(mCommandList->Close());
@@ -79,8 +81,8 @@ void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
 	processInput();
-	//mStateStack.update(gt);
-	mWorld.update(gt);
+	mStateStack.update(gt);
+	//mWorld.update(gt);
 	//UpdateCamera(gt);
 
 	// Cycle through the circular frame resource array.
@@ -142,8 +144,8 @@ void Game::Draw(const GameTimer& gt)
 	auto passCB = mCurrFrameResource->PassCB->Resource();
 	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
 
-	//mStateStack.draw();
-	mWorld.draw();
+	mStateStack.draw();
+	//mWorld.draw();
 	DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.

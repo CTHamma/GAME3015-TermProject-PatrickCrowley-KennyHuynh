@@ -96,7 +96,7 @@ private:
 	POINT mLastMousePos;
 	Camera mCamera;
 	Player mPlayer;
-	World mWorld;
+	//World mWorld;
 
 public:
 	std::vector<std::unique_ptr<RenderItem>>& getRenderItems() { return mAllRitems; }
