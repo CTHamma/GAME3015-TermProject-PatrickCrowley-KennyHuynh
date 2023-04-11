@@ -23,20 +23,21 @@ public:
 	struct Context
 	{
 		Context();
-		Context(Game* window, Player* player);
+		Context(Game* window, Player& player);
 
 		Game* window;
-		Player* player;
+		Player& player;
 	};
 
 
 public:
 	State(StateStack& stack, Context context);
-	virtual				~State();
+
 
 	virtual void		draw() = 0;
 	virtual bool		update(const GameTimer& dt) = 0;
-	virtual bool		handleEvent(const CommandQueue& commands) = 0;
+	virtual bool		handleEvent() = 0;
+	virtual void		buildScene() = 0;
 
 
 protected:
@@ -45,9 +46,8 @@ protected:
 	void				requestStateClear();
 
 	Context				getContext() const;
-
+	Context				mContext;
 
 private:
 	StateStack*			mStack;
-	Context				mContext;
 };

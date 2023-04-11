@@ -78,7 +78,7 @@
     <ClCompile Include="StateStack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TilteState.cpp">
+    <ClCompile Include="TitleState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

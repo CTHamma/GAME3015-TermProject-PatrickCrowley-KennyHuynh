@@ -2,7 +2,7 @@
 #include "StateStack.hpp"
 
 
-State::Context::Context(Game* window, Player* player)
+State::Context::Context(Game* window, Player& player)
 	: window(window)
 	, player(player)
 {
@@ -14,9 +14,7 @@ State::State(StateStack& stack, Context context)
 {
 }
 
-State::~State()
-{
-}
+
 
 void State::requestStackPush(States::ID stateID)
 {

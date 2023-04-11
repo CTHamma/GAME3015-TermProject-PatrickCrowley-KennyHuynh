@@ -10,10 +10,12 @@ class TitleState : public State
 {
 public:
 	TitleState(StateStack& stack, Context context);
+	~TitleState();
 
-	virtual void		draw();
-	virtual bool		update(const GameTimer& dt);
-	virtual bool		handleEvent(CommandQueue& commands);
+	void		draw() override;
+	bool		update(const GameTimer& dt) override;
+	bool		handleEvent() override;
+	void		buildScene() override;
 
 
 private:

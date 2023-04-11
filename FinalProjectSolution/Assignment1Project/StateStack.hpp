@@ -15,11 +15,11 @@
 #include <map>
 
 
-namespace sf
-{
-	class Event;
-	class RenderWindow;
-}
+//namespace sf
+//{
+//	class Event;
+//	class RenderWindow;
+//}
 
 class StateStack// : private sf::NonCopyable
 {
@@ -40,7 +40,9 @@ public:
 
 	void				update(const GameTimer& dt);
 	void				draw();
-	void				handleEvent(CommandQueue& commands);
+	void				handleEvent();
+
+	void				buildScene();
 
 	void				pushState(States::ID stateID);
 	void				popState();
@@ -48,20 +50,10 @@ public:
 
 	bool				isEmpty() const;
 
-	enum Action
-	{
-		MoveUp,
-		MoveDown,
-		GetPosition,
-		ActionCount
-	};
-
 
 private:
 	State::Ptr			createState(States::ID stateID);
 	void				applyPendingChanges();
-	//std::map<char, Action>		mKeyBinding;
-	//std::map<Action, Command>	mActionBinding;
 
 
 private:

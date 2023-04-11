@@ -8,11 +8,8 @@ const int gNumFrameResources = 3;
 
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance)
-	, mWorld(this)
-	, mStateStack(State::Context(this, &mPlayer))
+	, mStateStack(State::Context(this, mPlayer))
 {	
-	registerStates();
-	mStateStack.pushState(States::Title);
 }
 
 Game::~Game()
@@ -47,6 +44,9 @@ bool Game::Initialize()
 	BuildFrameResources();
 	BuildPSOs();
 
+	registerStates();
+	mStateStack.pushState(States::Title);
+
 	// Execute the initialization commands.
 	ThrowIfFailed(mCommandList->Close());
 	ID3D12CommandList* cmdsLists[] = { mCommandList.Get() };
@@ -78,7 +78,8 @@ void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
 	processInput();
-	mWorld.update(gt);
+	mStateStack.update(gt);
+	//mWorld.update(gt);
 	//UpdateCamera(gt);
 
 	// Cycle through the circular frame resource array.
@@ -140,8 +141,9 @@ void Game::Draw(const GameTimer& gt)
 	auto passCB = mCurrFrameResource->PassCB->Resource();
 	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
 
-	mWorld.draw();
-	DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
+	mStateStack.draw();
+	//mWorld.draw();
+	//DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.
 	mCommandList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(CurrentBackBuffer(),
@@ -392,6 +394,16 @@ void Game::LoadTextures()
 		DesertTex->Resource, DesertTex->UploadHeap));
 
 	mTextures[DesertTex->Name] = std::move(DesertTex);
+
+	//Menu Background
+	auto MenuBG = std::make_unique<Texture>();
+	MenuBG->Name = "MenuBG";
+	MenuBG->Filename = L"../../Textures/MenuBackground.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), MenuBG->Filename.c_str(),
+		MenuBG->Resource, MenuBG->UploadHeap));
+
+	mTextures[MenuBG->Name] = std::move(MenuBG);
 }
 
 void Game::BuildRootSignature()
@@ -400,20 +412,21 @@ void Game::BuildRootSignature()
 	texTable.Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0);
 
 	// Root parameter can be a table, root descriptor or root constants.
-	CD3DX12_ROOT_PARAMETER slotRootParameter[4];
+	CD3DX12_ROOT_PARAMETER slotRootParameter[5];
 
 	// Perfomance TIP: Order from most frequent to least frequent.
 	slotRootParameter[0].InitAsDescriptorTable(1, &texTable, D3D12_SHADER_VISIBILITY_PIXEL);
 	slotRootParameter[1].InitAsConstantBufferView(0);
 	slotRootParameter[2].InitAsConstantBufferView(1);
 	slotRootParameter[3].InitAsConstantBufferView(2);
+	slotRootParameter[4].InitAsConstantBufferView(3);
 
 	auto staticSamplers = GetStaticSamplers();
 
 	// A root signature is an array of root parameters.
 	//The Init function of the CD3DX12_ROOT_SIGNATURE_DESC class has two parameters that allow you to
 		//define an array of so - called static samplers your application can use.
-	CD3DX12_ROOT_SIGNATURE_DESC rootSigDesc(4, slotRootParameter,
+	CD3DX12_ROOT_SIGNATURE_DESC rootSigDesc(5, slotRootParameter,
 		(UINT)staticSamplers.size(), staticSamplers.data(),  //6 samplers!
 		D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
@@ -444,7 +457,7 @@ void Game::BuildDescriptorHeaps()
 	// Create the SRV heap.
 	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 3;
+	srvHeapDesc.NumDescriptors = 4;
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
@@ -457,6 +470,7 @@ void Game::BuildDescriptorHeaps()
 	auto EagleTex = mTextures["EagleTex"]->Resource;
 	auto RaptorTex = mTextures["RaptorTex"]->Resource;
 	auto DesertTex = mTextures["DesertTex"]->Resource;
+	auto MenuBG = mTextures["MenuBG"]->Resource;
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
 
@@ -491,6 +505,11 @@ void Game::BuildDescriptorHeaps()
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	srvDesc.Format = DesertTex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(DesertTex.Get(), &srvDesc, hDescriptor);
+
+	//MenuBG Descriptor
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = MenuBG->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(MenuBG.Get(), &srvDesc, hDescriptor);
 
 }
 
@@ -682,11 +701,22 @@ void Game::BuildMaterials()
 
 	mMaterials["Desert"] = std::move(Desert);
 
+	auto Menu = std::make_unique<Material>();
+	Menu->Name = "Menu";
+	Menu->MatCBIndex = 3;
+	Menu->DiffuseSrvHeapIndex = 3;
+	Menu->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Menu->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	Menu->Roughness = 0.2f;
+
+	mMaterials["Menu"] = std::move(Menu);
+
 }
 
 void Game::BuildRenderItems()
 {
-	mWorld.buildScene();
+	//mWorld.buildScene();
+	mStateStack.buildScene();
 
 	// All the render items are opaque.
 	for (auto& e : mAllRitems)
@@ -786,8 +816,7 @@ std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> Game::GetStaticSamplers()
 
 void Game::processInput()
 {
-	CommandQueue& commands = mWorld.getCommandQueue();
-	mPlayer.handleEvent(commands);
-	mPlayer.handleRealtimeInput(commands);
+	//CommandQueue& commands = mWorld.getCommandQueue();
+	mStateStack.handleEvent();
 }
 

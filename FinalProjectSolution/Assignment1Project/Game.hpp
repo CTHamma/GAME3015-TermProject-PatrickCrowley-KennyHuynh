@@ -60,7 +60,6 @@ private:
 
 
 	StateStack mStateStack;
-	State::Context mContext;
 
 	ComPtr<ID3D12RootSignature> mRootSignature = nullptr;
 
@@ -96,7 +95,6 @@ private:
 
 	POINT mLastMousePos;
 	Camera mCamera;
-	World mWorld;
 	Player mPlayer;
 
 public:

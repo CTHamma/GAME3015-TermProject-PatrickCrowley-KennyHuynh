@@ -30,16 +30,22 @@ void StateStack::draw()
 		state->draw();
 }
 
-void StateStack::handleEvent(CommandQueue& commands)
+void StateStack::handleEvent()
 {
 	// Iterate from top to bottom, stop as soon as handleEvent() returns false
 	for (auto itr = mStack.rbegin(); itr != mStack.rend(); ++itr)
 	{
-		if (!(*itr)->handleEvent(commands))
+		if (!(*itr)->handleEvent())
 			break;
 	}
 
 	applyPendingChanges();
+}
+
+void StateStack::buildScene()
+{
+	for (State::Ptr& state : mStack)
+		state->buildScene();
 }
 
 void StateStack::pushState(States::ID stateID)
