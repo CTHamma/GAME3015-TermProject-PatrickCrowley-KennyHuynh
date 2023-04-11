@@ -8,6 +8,7 @@ const int gNumFrameResources = 3;
 
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance)
+	, mWorld(this)
 	, mStateStack(State::Context(this, mPlayer))
 {	
 }
@@ -78,8 +79,8 @@ void Game::Update(const GameTimer& gt)
 {
 	OnKeyboardInput(gt);
 	processInput();
-	mStateStack.update(gt);
-	//mWorld.update(gt);
+	//mStateStack.update(gt);
+	mWorld.update(gt);
 	//UpdateCamera(gt);
 
 	// Cycle through the circular frame resource array.
@@ -141,9 +142,9 @@ void Game::Draw(const GameTimer& gt)
 	auto passCB = mCurrFrameResource->PassCB->Resource();
 	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
 
-	mStateStack.draw();
-	//mWorld.draw();
-	//DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
+	//mStateStack.draw();
+	mWorld.draw();
+	DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.
 	mCommandList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(CurrentBackBuffer(),

@@ -65,5 +65,7 @@ void TitleState::buildScene()
 	mBackgroundSprite = backgroundSprite.get();
 	mBackgroundSprite->setPosition(0.0f, 0.0f, 0.0f);
 	mBackgroundSprite->setWorldRotation(0.0f, 0.0f, 0.0f);
+
+	mBackgroundSprite->build();
 }
 #pragma endregion
