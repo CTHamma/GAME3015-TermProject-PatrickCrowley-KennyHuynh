@@ -13,18 +13,18 @@ SceneNode::SceneNode(Game* game)
 	mScrollSpeed = XMFLOAT3(0, 0, 0);
 }
 
-void SceneNode::attachChild(Ptr child)
+void SceneNode::attachChild(SceneNode* child)
 {
 	child->mParent = this;
 	mChildren.push_back(std::move(child));
 }
 
-SceneNode::Ptr SceneNode::detachChild(const SceneNode& node)
+SceneNode*SceneNode::detachChild(const SceneNode& node)
 {
-	auto found = std::find_if(mChildren.begin(), mChildren.end(), [&](Ptr& p) { return p.get() == &node; });
+	auto found = std::find_if(mChildren.begin(), mChildren.end(), [&](SceneNode* p) { return p == &node; });
 	assert(found != mChildren.end());
 
-	Ptr result = std::move(*found);
+	SceneNode* result = std::move(*found);
 	result->mParent = nullptr;
 	mChildren.erase(found);
 	return result;
@@ -43,26 +43,26 @@ void SceneNode::updateCurrent(const GameTimer& gt)
 
 void SceneNode::updateChildren(const GameTimer& gt)
 {
-	for (Ptr& child : mChildren)
+	for (SceneNode* child : mChildren)
 	{
 		child->update(gt);
 	}
 }
 
-void SceneNode::draw() const
+void SceneNode::draw()
 {
 	drawCurrent();
 	drawChildren();
 }
 
-void SceneNode::drawCurrent() const
+void SceneNode::drawCurrent()
 {
 	//Empty for now
 }
 
-void SceneNode::drawChildren() const
+void SceneNode::drawChildren()
 {
-	for (const Ptr& child : mChildren)
+	for (SceneNode* child : mChildren)
 	{
 		child->draw();
 	}
@@ -81,7 +81,7 @@ void SceneNode::buildCurrent()
 
 void SceneNode::buildChildren()
 {
-	for (const Ptr& child : mChildren)
+	for (SceneNode* child : mChildren)
 	{
 		child->build();
 	}
@@ -139,7 +139,7 @@ void SceneNode::onCommand(const Command& command, const GameTimer& dt)
 		command.action(*this, dt);
 
 	// Command children
-	for (Ptr& child : mChildren)
+	for (SceneNode* child : mChildren)
 		child->onCommand(command, dt);
 }
 

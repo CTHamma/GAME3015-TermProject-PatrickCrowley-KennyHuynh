@@ -59,11 +59,11 @@ public:
 public:
 	SceneNode(Game* game);
 
-	void					attachChild(Ptr child);
-	Ptr						detachChild(const SceneNode& node);
+	void					attachChild(SceneNode* child);
+	SceneNode*						detachChild(const SceneNode& node);
 
 	void					update(const GameTimer& gt);
-	void					draw() const;
+	void					draw();
 	void					build();
 
 	XMFLOAT3				getWorldPosition() const;
@@ -75,7 +75,7 @@ public:
 	XMFLOAT3				getWorldVelocity() const;
 	void					setVelocity(float x, float y, float z);
 
-	virtual unsigned int	getCategory();
+	unsigned int	getCategory();
 	void					onCommand(const Command& command, const GameTimer& dt);
 
 	XMFLOAT4X4				getWorldTransform() const;
@@ -83,12 +83,12 @@ public:
 
 	void					move(float x, float y, float z);
 private:
-	virtual void			updateCurrent(const GameTimer& gt);
+	void			updateCurrent(const GameTimer& gt);
 	void					updateChildren(const GameTimer& gt);
 
-	virtual void			drawCurrent() const;
-	void					drawChildren() const;
-	virtual void			buildCurrent();
+	void			drawCurrent();
+	void					drawChildren();
+	void			buildCurrent();
 	void					buildChildren();
 
 protected:
@@ -100,7 +100,7 @@ private:
 	XMFLOAT3				mWorldRotation;
 	XMFLOAT3				mWorldScaling;
 	XMFLOAT3				mScrollSpeed;
-	std::vector<Ptr>		mChildren;
+	std::vector<SceneNode*>		mChildren;
 	SceneNode*				mParent;
 };
 

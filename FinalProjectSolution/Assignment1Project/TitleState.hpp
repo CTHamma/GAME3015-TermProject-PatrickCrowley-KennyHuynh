@@ -27,5 +27,6 @@ private:
 	bool				mShowText;
 
 	//GameTimer&			mTextEffectTime;
+	SceneNode*			mSceneGraph;
 };
 #pragma endregion

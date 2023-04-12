@@ -6,6 +6,7 @@
 
 TitleState::TitleState(StateStack& stack, Context context)
 	: State(stack, context)
+	, mSceneGraph(new SceneNode(context.window))
 {
 	mBackgroundSprite = new SpriteNode(context.window, "MenuBackground");
 	mText = new SpriteNode(context.window, "MenuTitle");
@@ -65,7 +66,8 @@ void TitleState::buildScene()
 	mBackgroundSprite = backgroundSprite.get();
 	mBackgroundSprite->setPosition(0.0f, 0.0f, 0.0f);
 	mBackgroundSprite->setWorldRotation(0.0f, 0.0f, 0.0f);
+	mSceneGraph->attachChild((mBackgroundSprite));
 
-	mBackgroundSprite->build();
+	mSceneGraph->build();
 }
 #pragma endregion
