@@ -1,4 +1,3 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   World.cpp
-D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\Assignment1Project\World.cpp(82,42): warning C4305: 'argument': truncation from 'double' to 'float'
-  Assignment1Project.vcxproj -> D:\College\College2022-2023\Winter2023\GameEnginesDev2\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\x64\Debug\Assignment2Project.exe
+  Assignment1Project.vcxproj -> C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\Assignment2Solution\x64\Debug\Assignment2Project.exe

@@ -10,17 +10,26 @@ class TitleState : public State
 {
 public:
 	TitleState(StateStack& stack, Context context);
-	~TitleState();
 
-	void		draw() override;
-	bool		update(const GameTimer& dt) override;
-	bool		handleEvent() override;
-	void		buildScene() override;
+	void		draw();
+	bool		update(const GameTimer& dt);
+	bool		handleEvent();
+	void		buildScene();
+
+private:
+	enum Layer
+	{
+		Background,
+		Air,
+		LayerCount
+	};
 
 
 private:
-	SpriteNode*			mBackgroundSprite;
+	Game*				mGame;
+	SpriteNode*			mBackground;
 	SpriteNode*			mText;
+	//Aircraft*			mPlayerAircraft;
 	//sf::Text			mText;
 
 	float				mTextEffectTime;
@@ -28,5 +37,7 @@ private:
 
 	//GameTimer&			mTextEffectTime;
 	SceneNode*			mSceneGraph;
+	std::array<SceneNode*, LayerCount>	mSceneLayers;
+	XMFLOAT4							mWorldBounds;
 };
 #pragma endregion

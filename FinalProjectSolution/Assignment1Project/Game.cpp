@@ -24,6 +24,8 @@ bool Game::Initialize()
 	if (!D3DApp::Initialize())
 		return false;
 
+	registerStates();
+	mStateStack.handleEvent();
 
 	mCamera.SetPosition(0, 5, -5);
 	mCamera.Pitch(.25);
@@ -41,11 +43,6 @@ bool Game::Initialize()
 	BuildShadersAndInputLayout();
 	BuildShapeGeometry();
 	BuildMaterials();
-
-	registerStates();
-	mStateStack.pushState(States::Title);
-	mStateStack.handleEvent();
-
 	BuildRenderItems();
 	BuildFrameResources();
 	BuildPSOs();
@@ -364,6 +361,8 @@ void Game::UpdateMainPassCB(const GameTimer& gt)
 void Game::registerStates()
 {
 	mStateStack.registerState<TitleState>(States::Title);
+
+	mStateStack.pushState(States::Title);
 }
 
 void Game::LoadTextures()

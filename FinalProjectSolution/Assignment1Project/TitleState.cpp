@@ -7,29 +7,17 @@
 TitleState::TitleState(StateStack& stack, Context context)
 	: State(stack, context)
 	, mSceneGraph(new SceneNode(context.window))
-{
-	mBackgroundSprite = new SpriteNode(context.window, "MenuBackground");
-	mText = new SpriteNode(context.window, "MenuTitle");
-
-	mTextEffectTime = 0.0f;
-	mShowText = true;
-
-	//mBackgroundSprite.setTexture(context.textures->get(Textures::TitleScreen));
-
-	//mText.setFont(context.fonts->get(Fonts::Main));
-	//mText.setString("Press any key to start");
-	//centerOrigin(mText);
-	//mText.setPosition(context.window->getView().getSize() / 2.f);
-}
-
-TitleState::~TitleState()
+	, mGame(context.window)
+	, mBackground(nullptr)
+	//, mPlayerAircraft(nullptr)
+	, mWorldBounds(-1.5f, 1.5f, 200.0f, 0.0f) //Left, Right, Down, Up
 {
 }
 
 void TitleState::draw()
 {
 	Game& window = *getContext().window;
-	mBackgroundSprite->draw();
+	mBackground->draw();
 
 	//if (mShowText)
 	//	window.draw(mText);
@@ -37,13 +25,15 @@ void TitleState::draw()
 
 bool TitleState::update(const GameTimer& dt)
 {
-	mTextEffectTime += dt.DeltaTime();
+	//mPlayerAircraft->setVelocity(0.0f, 0.0f, 0.0f);
+	//mTextEffectTime += dt.DeltaTime();
 
-	if (mTextEffectTime >= 0.5f)
-	{
-		mShowText = !mShowText;
-		mTextEffectTime = 0.0f;
-	}
+	//if (mTextEffectTime >= 0.5f)
+	//{
+	//	mShowText = !mShowText;
+	//	mTextEffectTime = 0.0f;
+	//}
+	mSceneGraph->update(dt);
 
 	return true;
 }
@@ -61,12 +51,19 @@ bool TitleState::handleEvent()
 }
 void TitleState::buildScene()
 {
-	std::unique_ptr<SpriteNode> backgroundSprite(new SpriteNode(mContext.window, "MenuBackground"));
+	//std::unique_ptr<Aircraft> player(new Aircraft(Aircraft::Eagle, mGame));
+	//mPlayerAircraft = player.get();
+	//mPlayerAircraft->setPosition(0, 3.5, 0.0);
+	//mPlayerAircraft->setWorldRotation(-0.25, 0, 0);
+	//mPlayerAircraft->setScale(0.5, 0.5, 0.5);
+	////mPlayerAircraft->setVelocity(mScrollSpeed, 0.0, 0.0);
+	//mSceneGraph->attachChild(std::move(player));
 
-	mBackgroundSprite = backgroundSprite.get();
-	mBackgroundSprite->setPosition(0.0f, 0.0f, 0.0f);
-	mBackgroundSprite->setWorldRotation(0.0f, 0.0f, 0.0f);
-	mSceneGraph->attachChild((mBackgroundSprite));
+	std::unique_ptr<SpriteNode> background(new SpriteNode(SpriteNode::MenuBG, mGame));
+	mBackground = background.get();
+	mBackground->setPosition(0.0f, 0.0f, 0.0f);
+	mBackground->setWorldRotation(0.0f, 0.0f, 0.0f);
+	mSceneGraph->attachChild(std::move(background));
 
 	mSceneGraph->build();
 }

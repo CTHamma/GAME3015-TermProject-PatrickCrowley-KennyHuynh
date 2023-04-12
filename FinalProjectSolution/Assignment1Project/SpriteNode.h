@@ -1,13 +1,28 @@
 #pragma once
 #include "Entity.hpp"
+#include "StateIdentifiers.hpp"
+#include <string>
 
 class SpriteNode :
     public Entity
 {
 public:
-	SpriteNode(Game* game, std::string state);
+	enum Type
+	{
+		Title,
+		MenuBG,
+		Pause,
+		Desert
+	};
+
+public:
+	SpriteNode(Type type, Game* game);
+	unsigned int	getID();
 
 private:
 	virtual void		drawCurrent() const;
 	virtual void		buildCurrent();
+
+	Type			mType;
+	std::string		mSprite;
 };

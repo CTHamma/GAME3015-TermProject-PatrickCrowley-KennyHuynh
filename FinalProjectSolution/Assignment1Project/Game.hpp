@@ -1,6 +1,7 @@
 #include "World.hpp"
 #include "Player.h"
 #include "StateStack.hpp"
+#include "TitleState.hpp"
 
 class StateStack;
 
@@ -31,6 +32,7 @@ private:
 	void UpdateObjectCBs(const GameTimer& gt);
 	void UpdateMaterialCBs(const GameTimer& gt);
 	void UpdateMainPassCB(const GameTimer& gt);
+
 	void registerStates();
 
 	//step5
