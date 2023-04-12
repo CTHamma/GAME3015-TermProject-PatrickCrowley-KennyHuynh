@@ -3,7 +3,7 @@
 #include "State.hpp"
 #include "../Common/GameTimer.h"
 #include "CommandQueue.hpp"
-#include "SpriteNode.h"
+#include "SceneNode.hpp"
 
 
 class TitleState : public State
@@ -19,8 +19,8 @@ public:
 
 
 private:
-	SpriteNode*			mBackgroundSprite;
-	SpriteNode*			mText;
+	SceneNode*			mBackgroundSprite;
+	SceneNode*			mText;
 	//sf::Text			mText;
 
 	float				mTextEffectTime;

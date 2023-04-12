@@ -6,10 +6,10 @@
 
 TitleState::TitleState(StateStack& stack, Context context)
 	: State(stack, context)
-	, mSceneGraph(new SceneNode(context.window))
+	, mSceneGraph(new SceneNode(SceneNode::Ground, context.window))
 {
-	mBackgroundSprite = new SpriteNode(context.window, "MenuBackground");
-	mText = new SpriteNode(context.window, "MenuTitle");
+	mBackgroundSprite = new SceneNode(SceneNode::Ground, context.window);
+	mText = new SceneNode(SceneNode::Ground, context.window);
 
 	mTextEffectTime = 0.0f;
 	mShowText = true;
@@ -61,7 +61,7 @@ bool TitleState::handleEvent()
 }
 void TitleState::buildScene()
 {
-	std::unique_ptr<SpriteNode> backgroundSprite(new SpriteNode(mContext.window, "MenuBackground"));
+	std::unique_ptr<SceneNode> backgroundSprite(new SceneNode(SceneNode::Ground, mContext.window));
 
 	mBackgroundSprite = backgroundSprite.get();
 	mBackgroundSprite->setPosition(0.0f, 0.0f, 0.0f);

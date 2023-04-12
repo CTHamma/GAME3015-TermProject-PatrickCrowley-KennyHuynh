@@ -55,9 +55,15 @@ class SceneNode
 public:
 	typedef std::unique_ptr<SceneNode> Ptr;
 
+	enum Type
+	{
+		Eagle,
+		Raptor,
+		Ground
+	};
 
 public:
-	SceneNode(Game* game);
+	SceneNode(Type type, Game* game);
 
 	void					attachChild(SceneNode* child);
 	SceneNode*						detachChild(const SceneNode& node);
@@ -73,7 +79,6 @@ public:
 	XMFLOAT3				getWorldScale() const;
 	void					setScale(float x, float y, float z);
 	XMFLOAT3				getWorldVelocity() const;
-	void					setVelocity(float x, float y, float z);
 
 	unsigned int	getCategory();
 	void					onCommand(const Command& command, const GameTimer& dt);
@@ -82,6 +87,18 @@ public:
 	XMFLOAT4X4				getTransform() const;
 
 	void					move(float x, float y, float z);
+
+public:
+	void				setVelocity(float x, float y, float z);
+	void				setVelocity(XMFLOAT3 newVelocity);
+	XMFLOAT3			getVelocity() const;
+
+	void				accelerate(float x, float y, float z);
+	void				accelerate(XMFLOAT3 newAcceleration);
+
+public:
+	XMFLOAT3		mVelocity;
+
 private:
 	void			updateCurrent(const GameTimer& gt);
 	void					updateChildren(const GameTimer& gt);
@@ -102,5 +119,19 @@ private:
 	XMFLOAT3				mScrollSpeed;
 	std::vector<SceneNode*>		mChildren;
 	SceneNode*				mParent;
+};
+
+struct AircraftMover
+{
+	AircraftMover(float vx, float vy, float vz) :
+		velocity(vx, vy, vz)
+	{
+	}
+	void operator() (SceneNode& node, const GameTimer& dt) const
+	{
+		SceneNode& aircraft = static_cast<SceneNode&>(node);
+		aircraft.accelerate(velocity.x, velocity.y, velocity.z);
+	}
+	XMFLOAT3 velocity;
 };
 

@@ -1,8 +1,9 @@
 #pragma once
 #include "Command.hpp"
 #include "CommandQueue.hpp"
-#include "Aircraft.hpp"
 #include <map>
+#include "SceneNode.hpp"
+
 class Player
 {
 public:

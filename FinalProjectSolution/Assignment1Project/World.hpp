@@ -1,7 +1,5 @@
 #pragma once
 #include "SceneNode.hpp"
-#include "Aircraft.hpp"
-#include "SpriteNode.h"
 #include "Command.hpp"
 #include "CommandQueue.hpp"
 
@@ -35,8 +33,8 @@ private:
 	XMFLOAT4							mWorldBounds;
 	XMFLOAT2		    				mSpawnPosition;
 	float								mScrollSpeed;
-	Aircraft*							mPlayerAircraft;
-	SpriteNode*							mBackground;
-	Aircraft*							mEnemy;
+	SceneNode*							mPlayerAircraft;
+	SceneNode*							mBackground;
+	SceneNode*							mEnemy;
 	CommandQueue						mCommandQueue;
 };

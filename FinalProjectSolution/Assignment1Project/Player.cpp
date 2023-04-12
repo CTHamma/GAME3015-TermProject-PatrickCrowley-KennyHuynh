@@ -38,10 +38,10 @@ void Player::handleRealtimeInput(CommandQueue& commands)
 
 void Player::initializeActions()
 {
-	mActionBinding[MoveUp].action = derivedAction<Aircraft>(AircraftMover(0.f, +playerSpeed, 0.f));
-	mActionBinding[MoveLeft].action = derivedAction<Aircraft>(AircraftMover(-playerSpeed, 0.f, 0.f));
-	mActionBinding[MoveDown].action = derivedAction<Aircraft>(AircraftMover(0.f, -playerSpeed, 0.f));
-	mActionBinding[MoveRight].action = derivedAction<Aircraft>(AircraftMover(+playerSpeed, 0.f, 0.f));
+	mActionBinding[MoveUp].action = derivedAction<SceneNode>(AircraftMover(0.f, +playerSpeed, 0.f));
+	mActionBinding[MoveLeft].action = derivedAction<SceneNode>(AircraftMover(-playerSpeed, 0.f, 0.f));
+	mActionBinding[MoveDown].action = derivedAction<SceneNode>(AircraftMover(0.f, -playerSpeed, 0.f));
+	mActionBinding[MoveRight].action = derivedAction<SceneNode>(AircraftMover(+playerSpeed, 0.f, 0.f));
 }
 
 

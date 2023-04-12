@@ -2,7 +2,7 @@
 #include "Game.hpp"
 #include "Category.hpp"
 
-SceneNode::SceneNode(Game* game)
+SceneNode::SceneNode(Type type, Game* game)
 	: mChildren()
 	, mParent(nullptr)
 	, game(game)
@@ -124,7 +124,32 @@ void SceneNode::setScale(float x, float y, float z)
 //
 void SceneNode::setVelocity(float x, float y, float z)
 {
-	mScrollSpeed = XMFLOAT3(x, y, z);
+	XMFLOAT3 velocity = XMFLOAT3(x, y, z);
+	mVelocity = velocity;
+}
+
+void SceneNode::setVelocity(XMFLOAT3 newVelocity)
+{
+	mVelocity = newVelocity;
+}
+
+XMFLOAT3 SceneNode::getVelocity() const
+{
+	return mVelocity;
+}
+
+void SceneNode::accelerate(float x, float y, float z)
+{
+	mVelocity.x += x;
+	mVelocity.y += y;
+	mVelocity.z += z;
+}
+
+void SceneNode::accelerate(XMFLOAT3 newAcceleration)
+{
+	mVelocity.x += newAcceleration.x;
+	mVelocity.y += newAcceleration.y;
+	mVelocity.z += newAcceleration.z;
 }
 
 unsigned int SceneNode::getCategory()
