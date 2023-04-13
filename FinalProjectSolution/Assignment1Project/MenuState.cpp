@@ -43,9 +43,9 @@ bool MenuState::update(const GameTimer& dt)
 bool MenuState::handleEvent()
 {
 	// If any key is pressed, trigger the next screen
-	if (GetAsyncKeyState(VK_RETURN) & 0x8000)
+	if (GetAsyncKeyState(VK_SPACE) & 0x8000)
 	{
-		mGame->SetStateID(States::Title);
+		mGame->SetStateID(States::Game);
 	}
 
 	return true;

@@ -39,7 +39,7 @@
     <ClCompile Include="Aircraft.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="World.cpp">
+    <ClCompile Include="GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\Camera.cpp">
@@ -104,7 +104,7 @@
     <ClInclude Include="Aircraft.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="World.hpp">
+    <ClInclude Include="GameState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\Camera.h">

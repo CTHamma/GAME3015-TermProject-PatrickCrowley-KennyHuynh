@@ -151,7 +151,7 @@
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateStack.cpp" />
     <ClCompile Include="TitleState.cpp" />
-    <ClCompile Include="World.cpp">
+    <ClCompile Include="GameState.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
@@ -185,7 +185,7 @@
     <ClInclude Include="StateIdentifiers.hpp" />
     <ClInclude Include="StateStack.hpp" />
     <ClInclude Include="TitleState.hpp" />
-    <ClInclude Include="World.hpp">
+    <ClInclude Include="GameState.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
   </ItemGroup>
