@@ -26,7 +26,6 @@ bool GameState::update(const GameTimer& dt)
 {
 	mPlayerAircraft->setVelocity(0.0f, 0.0f, 0.0f);
 	
-
 	// Forward commands to scene graph, adapt velocity (scrolling, diagonal correction)
 	while (!mCommandQueue.isEmpty())
 		mSceneGraph->onCommand(mCommandQueue.pop(), dt);
@@ -39,11 +38,20 @@ bool GameState::update(const GameTimer& dt)
 
 bool GameState::handleEvent()
 {
+	mContext.player.handleRealtimeInput(mCommandQueue);
+
+	// If any key is pressed, trigger the next screen
+	if (GetAsyncKeyState('P') & 0x8000)
+	{
+		mGame->SetStateID(States::Pause);
+	}
+
 	return true;
 }
 
 void GameState::draw()
 {
+	Game& window = *getContext().window;
 	mSceneGraph->draw();
 }
 

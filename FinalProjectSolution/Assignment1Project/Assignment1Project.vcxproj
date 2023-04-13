@@ -145,6 +145,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
+    <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneNode.cpp" />
     <ClCompile Include="SpriteNode.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="FrameResource.h" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="MenuState.hpp" />
+    <ClInclude Include="PauseState.hpp" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ResourceHolder.hpp" />
     <ClInclude Include="ResourceIdentifiers.hpp" />

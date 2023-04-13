@@ -3,6 +3,7 @@
 #include "StateStack.hpp"
 #include "TitleState.hpp"
 #include "MenuState.hpp"
+#include "PauseState.hpp"
 
 class StateStack;
 

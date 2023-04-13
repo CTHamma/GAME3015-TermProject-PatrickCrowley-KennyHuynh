@@ -366,11 +366,12 @@ void Game::registerStates()
 	mStateStack.registerState<TitleState>(States::Title);
 	mStateStack.registerState<MenuState>(States::Menu);
 	mStateStack.registerState<GameState>(States::Game);
+	mStateStack.registerState<PauseState>(States::Pause);
 
 	mStateStack.pushState(States::Title);
 	mStateStack.pushState(States::Menu);
 	mStateStack.pushState(States::Game);
-
+	mStateStack.pushState(States::Pause);
 }
 
 void Game::SetStateID(States::ID id)
