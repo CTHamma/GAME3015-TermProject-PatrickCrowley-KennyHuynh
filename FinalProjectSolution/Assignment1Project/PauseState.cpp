@@ -11,6 +11,7 @@ PauseState::PauseState(StateStack& stack, Context context, States::ID id)
 	, mGame(context.window)
 	, mPlayerAircraft(nullptr)
 	, mBackground(nullptr)
+	, mPauseLabel(nullptr)
 	, mWorldBounds(-1.5f, 1.5f, 200.0f, 0.0f) //Left, Right, Down, Up
 	, mSpawnPosition(0.f, 0.f)
 {
@@ -29,6 +30,10 @@ bool PauseState::handleEvent()
 	if (GetAsyncKeyState('R') & 0x8000)
 	{
 		mGame->SetStateID(States::Game);
+	}
+	if (GetAsyncKeyState('Q') & 0x8000)
+	{
+		mGame->SetStateID(States::Title);
 	}
 	return true;
 }
@@ -83,6 +88,13 @@ void PauseState::buildScene()
 	mBackground->setPosition(0, 0, 40.0);
 	mBackground->setScale(100.0, 1.0, 20.0); // Made world larger by increasing scale
 	mSceneGraph->attachChild(std::move(plane3));
+
+	std::unique_ptr<SpriteNode> pauseScreen(new SpriteNode(SpriteNode::Pause, mGame, States::Pause));
+	mPauseLabel = pauseScreen.get();
+	mPauseLabel->setPosition(-1.0, 4.3, -2.5);
+	mPauseLabel->setScale(100.0, 2.0, 1.0);
+	mPauseLabel->setWorldRotation(0.25, 0.0, 0.0);
+	mSceneGraph->attachChild(std::move(pauseScreen));
 
 	mSceneGraph->build();
 }

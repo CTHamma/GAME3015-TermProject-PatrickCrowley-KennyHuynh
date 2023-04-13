@@ -430,6 +430,16 @@ void Game::LoadTextures()
 		MenuBG->Resource, MenuBG->UploadHeap));
 
 	mTextures[MenuBG->Name] = std::move(MenuBG);
+
+	//Pause
+	auto PauseTex = std::make_unique<Texture>();
+	PauseTex->Name = "PauseTex";
+	PauseTex->Filename = L"../../Textures/PauseScreen.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), PauseTex->Filename.c_str(),
+		PauseTex->Resource, PauseTex->UploadHeap));
+
+	mTextures[PauseTex->Name] = std::move(PauseTex);
 }
 
 void Game::BuildRootSignature()
@@ -438,7 +448,7 @@ void Game::BuildRootSignature()
 	texTable.Init(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0);
 
 	// Root parameter can be a table, root descriptor or root constants.
-	CD3DX12_ROOT_PARAMETER slotRootParameter[6];
+	CD3DX12_ROOT_PARAMETER slotRootParameter[7];
 
 	// Perfomance TIP: Order from most frequent to least frequent.
 	slotRootParameter[0].InitAsDescriptorTable(1, &texTable, D3D12_SHADER_VISIBILITY_PIXEL);
@@ -447,13 +457,14 @@ void Game::BuildRootSignature()
 	slotRootParameter[3].InitAsConstantBufferView(2);
 	slotRootParameter[4].InitAsConstantBufferView(3);
 	slotRootParameter[5].InitAsConstantBufferView(4);
+	slotRootParameter[6].InitAsConstantBufferView(5);
 
 	auto staticSamplers = GetStaticSamplers();
 
 	// A root signature is an array of root parameters.
 	//The Init function of the CD3DX12_ROOT_SIGNATURE_DESC class has two parameters that allow you to
 		//define an array of so - called static samplers your application can use.
-	CD3DX12_ROOT_SIGNATURE_DESC rootSigDesc(6, slotRootParameter,
+	CD3DX12_ROOT_SIGNATURE_DESC rootSigDesc(7, slotRootParameter,
 		(UINT)staticSamplers.size(), staticSamplers.data(),  //6 samplers!
 		D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
@@ -484,7 +495,7 @@ void Game::BuildDescriptorHeaps()
 	// Create the SRV heap.
 	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 5;
+	srvHeapDesc.NumDescriptors = 6;
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
@@ -499,6 +510,7 @@ void Game::BuildDescriptorHeaps()
 	auto DesertTex = mTextures["DesertTex"]->Resource;
 	auto TitleTex = mTextures["TitleTex"]->Resource;
 	auto MenuBG = mTextures["MenuBG"]->Resource;
+	auto PauseTex = mTextures["PauseTex"]->Resource;
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
 
@@ -543,6 +555,11 @@ void Game::BuildDescriptorHeaps()
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	srvDesc.Format = MenuBG->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(MenuBG.Get(), &srvDesc, hDescriptor);
+
+	//Pause Descriptor
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = PauseTex->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(PauseTex.Get(), &srvDesc, hDescriptor);
 
 }
 
@@ -753,6 +770,16 @@ void Game::BuildMaterials()
 	Menu->Roughness = 0.2f;
 
 	mMaterials["Menu"] = std::move(Menu);
+
+	auto Pause = std::make_unique<Material>();
+	Pause->Name = "Pause";
+	Pause->MatCBIndex = 5;
+	Pause->DiffuseSrvHeapIndex = 5;
+	Pause->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Pause->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	Pause->Roughness = 0.2f;
+
+	mMaterials["Pause"] = std::move(Pause);
 
 }
 

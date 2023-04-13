@@ -30,11 +30,12 @@ private:
 	Game*				mGame;
 	SpriteNode*			mBackground;
 	SpriteNode*			mText;
-	//Aircraft*			mPlayerAircraft;
+	Aircraft*			mPlayerAircraft;
 	//sf::Text			mText;
 
 	float				mTextEffectTime;
 	bool				mShowText;
+	int					number = 0;
 
 	//GameTimer&			mTextEffectTime;
 	SceneNode*			mSceneGraph;

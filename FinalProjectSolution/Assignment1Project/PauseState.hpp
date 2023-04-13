@@ -37,6 +37,7 @@ private:
 	float								mScrollSpeed;
 	Aircraft*							mPlayerAircraft;
 	SpriteNode*							mBackground;
+	SpriteNode*							mPauseLabel;
 	Aircraft*							mEnemy;
 	CommandQueue						mCommandQueue;
 	States::ID mState;

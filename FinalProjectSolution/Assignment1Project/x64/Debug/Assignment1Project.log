@@ -1,7 +1,4 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj, Assignment2Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Game.cpp
-  MenuState.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\MenuState.cpp(65,41): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\MenuState.cpp(67,45): warning C4305: 'argument': truncation from 'double' to 'float'
-  Generating Code...
+  PauseState.cpp
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\PauseState.cpp(94,42): warning C4305: 'argument': truncation from 'double' to 'float'
   Assignment1Project.vcxproj -> C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\x64\Debug\FinalProject.exe
