@@ -1,108 +1,17 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj, Assignment2Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Aircraft.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\Aircraft.cpp(69,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
-  CommandQueue.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  Entity.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\Entity.cpp(3,54): error C2661: 'SceneNode::SceneNode': no overloaded function takes 2 arguments
   Game.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\Game.cpp(776,27): error C2039: 'thisState': is not a member of 'RenderItem'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(19): message : see declaration of 'RenderItem'
+  main.cpp
   MenuState.cpp
-  Player.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   SceneNode.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.cpp(5,12): error C2511: 'SceneNode::SceneNode(Game *,States::ID)': overloaded member function not found in 'SceneNode'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(54): message : see declaration of 'SceneNode'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.cpp(9,1): error C2550: 'SceneNode::{ctor}': constructor initializer lists are only allowed on constructor definitions
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.cpp(10,2): error C2597: illegal reference to non-static member 'SceneNode::mWorldPosition'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(101): message : see declaration of 'SceneNode::mWorldPosition'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.cpp(11,2): error C2597: illegal reference to non-static member 'SceneNode::mWorldScaling'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(103): message : see declaration of 'SceneNode::mWorldScaling'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.cpp(12,2): error C2597: illegal reference to non-static member 'SceneNode::mWorldRotation'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(102): message : see declaration of 'SceneNode::mWorldRotation'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.cpp(13,2): error C2597: illegal reference to non-static member 'SceneNode::mScrollSpeed'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(104): message : see declaration of 'SceneNode::mScrollSpeed'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.cpp(14,2): error C2065: 'currentState': undeclared identifier
   SpriteNode.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SpriteNode.cpp(60,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SpriteNode.cpp(67,12): error C2039: 'thisState': is not a member of 'RenderItem'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(19): message : see declaration of 'RenderItem'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SpriteNode.cpp(67,24): error C2065: 'currentState': undeclared identifier
   State.cpp
   StateStack.cpp
   TitleState.cpp
   World.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\World.cpp(6,39): error C2661: 'SceneNode::SceneNode': no overloaded function takes 2 arguments
-  main.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,13): error C3646: 'thisState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(49,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,24): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(61,32): error C2061: syntax error: identifier 'ID'
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,2): error C2653: 'States': is not a class or namespace name
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,16): error C3646: 'currentState': unknown override specifier
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SceneNode.hpp(86,28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   Generating Code...
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SpriteNode.cpp(42): warning C4715: 'SpriteNode::getID': not all control paths return a value
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\Aircraft.cpp(31): warning C4715: 'Aircraft::getCategory': not all control paths return a value
+  Assignment1Project.vcxproj -> C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\x64\Debug\FinalProject.exe

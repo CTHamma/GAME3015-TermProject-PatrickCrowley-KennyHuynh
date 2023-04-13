@@ -6,6 +6,7 @@
 #include "../Common/Camera.h"
 #include "FrameResource.h"
 #include "Command.hpp"
+#include "StateIdentifiers.hpp"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
