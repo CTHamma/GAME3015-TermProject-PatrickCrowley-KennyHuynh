@@ -45,7 +45,7 @@ bool MenuState::handleEvent()
 	// If any key is pressed, trigger the next screen
 	if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 	{
-		mGame->SetStateID(States::Game);
+		mGame->SetStateID(States::Title);
 	}
 
 	return true;
@@ -62,8 +62,9 @@ void MenuState::buildScene()
 
 	std::unique_ptr<SpriteNode> menuScreen(new SpriteNode(SpriteNode::MenuBG, mGame, States::Menu));
 	mBackground = menuScreen.get();
-	mBackground->setPosition(0.0f, 4.5f, -3.0f);
-	mBackground->setWorldRotation(0.3f, 0.0f, 0.0f);
+	mBackground->setPosition(-5.9, 3.6, 0.0);
+	mBackground->setScale(195.0, 4.0, 1.0);
+	mBackground->setWorldRotation(0.2, 0.0, 0.0);
 	mSceneGraph->attachChild(std::move(menuScreen));
 
 	mSceneGraph->build();

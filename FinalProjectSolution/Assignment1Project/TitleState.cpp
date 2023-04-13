@@ -62,8 +62,9 @@ void TitleState::buildScene()
 
 	std::unique_ptr<SpriteNode> background(new SpriteNode(SpriteNode::Title, mGame, States::Title));
 	mBackground = background.get();
-	mBackground->setPosition(0.0f, 4.5f, -3.0f);
-	mBackground->setWorldRotation(0.3f, 0.0f, 0.0f);
+	mBackground->setPosition(-5.9, 3.6, -1.0);
+	mBackground->setScale(195.0, 4.0, 1.0);
+	mBackground->setWorldRotation(0.2, 0.0, 0.0);
 	mSceneGraph->attachChild(std::move(background));
 
 	mSceneGraph->build();

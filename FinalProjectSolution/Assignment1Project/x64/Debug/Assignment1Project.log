@@ -1,17 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Assignment1Project.vcxproj, Assignment2Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Aircraft.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\Aircraft.cpp(69,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
-  Game.cpp
-  main.cpp
   MenuState.cpp
-  SceneNode.cpp
-  SpriteNode.cpp
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SpriteNode.cpp(60,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
-  State.cpp
-  StateStack.cpp
-  TitleState.cpp
-  World.cpp
-  Generating Code...
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\SpriteNode.cpp(42): warning C4715: 'SpriteNode::getID': not all control paths return a value
-C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\Aircraft.cpp(31): warning C4715: 'Aircraft::getCategory': not all control paths return a value
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\MenuState.cpp(65,41): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\Assignment1Project\MenuState.cpp(67,45): warning C4305: 'argument': truncation from 'double' to 'float'
   Assignment1Project.vcxproj -> C:\GAME3015-TermProject-PatrickCrowley-KennyHuynh\FinalProjectSolution\x64\Debug\FinalProject.exe

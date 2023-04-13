@@ -25,6 +25,8 @@ bool Game::Initialize()
 		return false;
 
 	registerStates();
+
+	SetStateID(States::Title);
 	
 	mStateStack.handleEvent();
 

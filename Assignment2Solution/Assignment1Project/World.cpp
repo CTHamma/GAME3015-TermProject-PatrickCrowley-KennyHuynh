@@ -76,15 +76,15 @@ void World::buildScene()
 	//mBackground->setVelocity(0.0f, 0.0f, -mScrollSpeed);
 	//mSceneGraph->attachChild(std::move(plane2));
 
-	//std::unique_ptr<SpriteNode> plane3(new SpriteNode(SpriteNode(mGame)));
-	//mBackground = plane3.get();
-	////mBackground->setPosition(mWorldBounds.left, mWorldBounds.top);
-	//mBackground->setPosition(-5.9, 3.5, -1.0);
-	//mBackground->setScale(195.0, 4.0, 1.0); // Made world larger by increasing scale
-	////mBackground->setVelocity(0.0f, 0.0f, -mScrollSpeed);
-	//mSceneGraph->attachChild(std::move(plane3));
+	std::unique_ptr<SpriteNode> plane3(new SpriteNode(SpriteNode(mGame)));
+	mBackground = plane3.get();
+	//mBackground->setPosition(mWorldBounds.left, mWorldBounds.top);
+	mBackground->setPosition(-5.9, 3.5, -1.0);
+	mBackground->setScale(195.0, 4.0, 1.0); // Made world larger by increasing scale
+	//mBackground->setVelocity(0.0f, 0.0f, -mScrollSpeed);
+	mSceneGraph->attachChild(std::move(plane3));
 
-	//mSceneGraph->build();
+	mSceneGraph->build();
 }
 
 void World::adaptPlayerVelocity()
