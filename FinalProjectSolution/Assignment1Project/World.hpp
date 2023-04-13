@@ -8,7 +8,7 @@
 class World 
 {
 public:
-	explicit							World(Game* window);
+	explicit							World(Game* window, States::ID id);
 	void								update(const GameTimer& gt);
 	void								draw();
 

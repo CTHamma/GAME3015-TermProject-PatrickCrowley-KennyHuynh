@@ -46,6 +46,7 @@ struct RenderItem
 	UINT IndexCount = 0;
 	UINT StartIndexLocation = 0;
 	int BaseVertexLocation = 0;
+	States::ID thisState;
 };
 
 class Game;
@@ -57,7 +58,7 @@ public:
 
 
 public:
-	SceneNode(Game* game);
+	SceneNode(Game* game, States::ID id);
 
 	void					attachChild(Ptr child);
 	Ptr						detachChild(const SceneNode& node);
@@ -82,6 +83,7 @@ public:
 	XMFLOAT4X4				getTransform() const;
 
 	void					move(float x, float y, float z);
+	States::ID				currentState;
 private:
 	virtual void			updateCurrent(const GameTimer& gt);
 	void					updateChildren(const GameTimer& gt);

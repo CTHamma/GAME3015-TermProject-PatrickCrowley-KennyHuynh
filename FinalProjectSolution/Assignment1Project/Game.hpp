@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "StateStack.hpp"
 #include "TitleState.hpp"
+#include "MenuState.hpp"
 
 class StateStack;
 
@@ -13,7 +14,7 @@ public:
 	Game& operator=(const Game& rhs) = delete;
 	~Game();
 
-
+	void SetStateID(States::ID id);
 
 	virtual bool Initialize()override;
 	Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> getCommandList();
@@ -62,6 +63,7 @@ private:
 
 
 	StateStack mStateStack;
+	States::ID currentState;
 
 	ComPtr<ID3D12RootSignature> mRootSignature = nullptr;
 

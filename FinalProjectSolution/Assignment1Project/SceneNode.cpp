@@ -2,7 +2,7 @@
 #include "Game.hpp"
 #include "Category.hpp"
 
-SceneNode::SceneNode(Game* game)
+SceneNode::SceneNode(Game* game, States::ID id)
 	: mChildren()
 	, mParent(nullptr)
 	, game(game)
@@ -11,6 +11,7 @@ SceneNode::SceneNode(Game* game)
 	mWorldScaling = XMFLOAT3(1, 1, 1);
 	mWorldRotation = XMFLOAT3(0, 0, 0);
 	mScrollSpeed = XMFLOAT3(0, 0, 0);
+	currentState = id;
 }
 
 void SceneNode::attachChild(Ptr child)

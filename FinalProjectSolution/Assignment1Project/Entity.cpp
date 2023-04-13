@@ -1,6 +1,6 @@
 #include "Entity.hpp"
 
-Entity::Entity(Game* game) : SceneNode(game), mVelocity(0, 0, 0)
+Entity::Entity(Game* game, States::ID id) : SceneNode(game, id), mVelocity(0, 0, 0)
 {
 }
 

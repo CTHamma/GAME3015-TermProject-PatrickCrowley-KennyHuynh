@@ -1,11 +1,12 @@
 #pragma once
 #include "SceneNode.hpp"
+#include "StateIdentifiers.hpp"
 
 class Entity :
     public SceneNode
 {
 public:
-	Entity(Game* game);
+	Entity(Game* game, States::ID id);
 	void				setVelocity(float x, float y, float z);
 	void				setVelocity(XMFLOAT3 newVelocity);
 	XMFLOAT3			getVelocity() const;

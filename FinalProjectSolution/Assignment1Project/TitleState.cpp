@@ -2,11 +2,13 @@
 #include "TitleState.hpp"
 //#include "Utility.hpp"
 #include "ResourceHolder.hpp"
+#include "Game.hpp"
 
 
-TitleState::TitleState(StateStack& stack, Context context)
+TitleState::TitleState(StateStack& stack, Context context, States::ID id)
 	: State(stack, context)
-	, mSceneGraph(new SceneNode(context.window))
+	, mState(States::Title)
+	, mSceneGraph(new SceneNode(context.window, id))
 	, mGame(context.window)
 	, mBackground(nullptr)
 	//, mPlayerAircraft(nullptr)
@@ -43,8 +45,7 @@ bool TitleState::handleEvent()
 	// If any key is pressed, trigger the next screen
 	if (GetAsyncKeyState(VK_RETURN) & 0x8000)
 	{
-		requestStackPop();
-		requestStackPush(States::Menu);
+		mGame->SetStateID(States::Menu);
 	}
 
 	return true;
@@ -59,10 +60,10 @@ void TitleState::buildScene()
 	////mPlayerAircraft->setVelocity(mScrollSpeed, 0.0, 0.0);
 	//mSceneGraph->attachChild(std::move(player));
 
-	std::unique_ptr<SpriteNode> background(new SpriteNode(SpriteNode::MenuBG, mGame));
+	std::unique_ptr<SpriteNode> background(new SpriteNode(SpriteNode::Title, mGame, States::Title));
 	mBackground = background.get();
-	mBackground->setPosition(0.0f, 0.0f, 0.0f);
-	mBackground->setWorldRotation(0.0f, 0.0f, 0.0f);
+	mBackground->setPosition(0.0f, 4.5f, -3.0f);
+	mBackground->setWorldRotation(0.3f, 0.0f, 0.0f);
 	mSceneGraph->attachChild(std::move(background));
 
 	mSceneGraph->build();

@@ -2,7 +2,7 @@
 #include "Game.hpp"
 #include "Category.hpp"
 
-Aircraft::Aircraft(Type type, Game* game) : Entity(game)
+Aircraft::Aircraft(Type type, Game* game, States::ID id) : Entity(game, id)
 	, mType(type)
 {
 	switch (type)

@@ -16,7 +16,7 @@ public:
 	};
 
 public:
-	SpriteNode(Type type, Game* game);
+	SpriteNode(Type type, Game* game, States::ID id);
 	unsigned int	getID();
 
 private:

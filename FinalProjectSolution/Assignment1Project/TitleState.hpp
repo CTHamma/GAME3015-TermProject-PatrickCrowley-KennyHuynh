@@ -4,12 +4,12 @@
 #include "../Common/GameTimer.h"
 #include "CommandQueue.hpp"
 #include "SpriteNode.h"
-
+#include "StateIdentifiers.hpp"
 
 class TitleState : public State
 {
 public:
-	TitleState(StateStack& stack, Context context);
+	TitleState(StateStack& stack, Context context, States::ID id);
 
 	void		draw();
 	bool		update(const GameTimer& dt);
@@ -39,5 +39,6 @@ private:
 	SceneNode*			mSceneGraph;
 	std::array<SceneNode*, LayerCount>	mSceneLayers;
 	XMFLOAT4							mWorldBounds;
+	States::ID mState;
 };
 #pragma endregion

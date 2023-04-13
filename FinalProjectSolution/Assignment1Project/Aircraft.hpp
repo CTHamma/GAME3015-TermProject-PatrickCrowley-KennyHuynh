@@ -14,7 +14,7 @@ public:
 
 
 public:
-	Aircraft(Type type, Game* game);
+	Aircraft(Type type, Game* game, States::ID id);
 	unsigned int	getCategory();
 
 
